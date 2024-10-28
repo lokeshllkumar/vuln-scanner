@@ -3,7 +3,7 @@
 TARGET=$1
 REPORT=$2
 
-log "Running Nmap scan on $TARGET..."
+log "INFO" "Running Nmap scan on $TARGET..."
 
 nmap -p 80,443 -sV --script=banner --open "$TARGET" -oG - | while read -r line; do
     if [[$line == *"open"*]]; then
